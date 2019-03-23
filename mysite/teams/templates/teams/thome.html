@@ -1,0 +1,144 @@
+{% extends "A3rafkolytk/header.html" %}
+
+{% block title %}Teams and Chapters{% endblock %}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+<p  style="margin-top: 80px; text-align: center; font-family: 'Josefin Sans', sans-serif; color: white; font-size: 100px">Teams</p>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 50px;margin-bottom: 0px; margin-left: 300px; margin-right: 300px;">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="1" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="2" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="3" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="4" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="5" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="6" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="7" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="8" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="9" style="background-color: black; border-color: white;"></li>
+
+  </ol>
+
+    {% load staticfiles %}
+  <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+            <a href="#A+ (Seeking Top)"><img src="{% static 'teams/img/a+.jpg' %}" alt="A+ Team" style="width:100%; height: 250px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#SMU (Start Menu Union) Believe To Achieve"><img src="{% static 'teams/img/smu.jpg' %}" alt="Smu" style="width: 100%; height: 250px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#mohandsenwalaken"><img src="{% static 'teams/img/mw.png' %}" alt="mw" style="width:100%; height: 250px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#F.O.E ( STP ) : Success Training Programmes"><img src="{% static 'teams/img/stp.jpg' %}" alt="stp" style="width:100%; height: 250px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#PED Pioneers"><img src="{% static 'teams/img/ped.png' %}" alt="PED" style="width:100%; height: 250px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#NAD Majors"><img src="{% static 'teams/img/nad.jpg' %}" alt="NAD" style="width:100%; height: 250px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#Kadda.handasa"><img src="{% static 'teams/img/kad.jpg' %}" alt="Qadda_Hnadasa" style="width:100%; height: 250px;"></a>
+      </div>
+        <div class="item">
+        <a href="#Safwa Engineering"><img src="{% static 'teams/img/safwa.jpg' %}" alt="safwa_handasa" style="width:100%; height: 250px;"></a>
+      </div>
+        <div class="item">
+        <a href="#D.O.A"><img src="{% static 'teams/img/doa.jpg' %}" alt="DOA" style="width:100%; height: 250px;"></a>
+      </div>
+        <div class="item">
+        <a href="#Metanoia Foundation"><img src="{% static 'teams/img/met.png' %}" alt="Metanoia" style="width:100%; height: 250px;"></a>
+      </div>
+
+    </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+<p  style="margin-top: 80px; text-align: center; font-family: 'Josefin Sans', sans-serif; color: white; font-size: 100px">Chapters</p>
+
+<div id="myid" class="carousel slide" data-ride="carousel" style="margin-top: 50px;margin-bottom: 0px; margin-left: 300px; margin-right: 300px;">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myid" data-slide-to="0" class="active" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myid" data-slide-to="1" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myid" data-slide-to="2" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myid" data-slide-to="3" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myid" data-slide-to="4" style="background-color: black; border-color: white;"></li>
+
+
+
+  </ol>
+
+    {% load staticfiles %}
+  <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+            <a href="IEEE AlexSB"><img src="{% static 'teams/img/ieee.jpg' %}" alt="IEEE" style="width:100%; height: 250px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#ACM Alexandria Student Chapter"><img src="{% static 'teams/img/acm.jpg' %}" alt="ACM" style="width:100%; height: 250px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#SPE - Alexandria University Student Chapter"><img src="{% static 'teams/img/spe.png' %}" alt="SPE" style="width:100%; height: 250px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#ASME SS - Alexandria University"><img src="{% static 'teams/img/asme.jpg' %}" alt="ASME" style="width:100%; height: 250px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#NPSS "Nuclear & Plasma Sciences Society" l IEEE Alex SC"><img src="{% static 'teams/img/np.jpg' %}" alt="NPSS" style="width:100%; height: 250px;"></a>
+      </div>
+
+
+    </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myid" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myid" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+
+{% for com in object_list %}
+<div style="margin: 75px 150px; background-color: cadetblue; padding-bottom: 100px; padding-left: 100px;padding-right: 50px; padding-top: 60px; border-radius: 25px;" id="{{ com.team_name }}" class="wow jackInTheBox" data-wow-duration="2s" data-wow-delay=".1s">
+    <h2 style="font-family: 'Gaegu', cursive;font-family: 'Josefin Sans', sans-serif; text-align: center; color: darkred;">{{ com.team_name }}</h2>
+    <p style="text-align: center; font-family: 'Josefin Sans', sans-serif; color: brown; font-size: 19px"><b>
+        {{ com.team_description }}
+      <a href="{{com.team_link1}}" target="_blank"><img  src="{% static 'teams/img/fb.png' %}" alt="fblink" height="70" width="70" align="right"></a>
+
+        </b>
+    </p>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

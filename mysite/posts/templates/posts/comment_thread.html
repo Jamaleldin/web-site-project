@@ -1,0 +1,35 @@
+{% extends "A3rafkolytk/header.html" %}
+{% block title%}Reply To comment{% endblock %}
+{% block content %}
+<div style="align-content: center; background-color: beige; margin: 10% 10%; border-radius: 25px;">
+    <div class="panel panel-info">
+          <div class="panel-heading">
+              <h4>
+                  {{ comment.content }}
+                  <h5>
+                      By: {{ comment.user }} | {{ comment.timestamp|timesince }} ago | {% if comment.children.count > 1 %} {{ comment.children.count }} Replies | {% elif comment.children.count == 1 %}1 Reply{% endif %}
+                  </h5>
+              </h4>
+          </div>
+        <div class="panel-body">
+            {% for child_comment in comment.children %}
+                <blockquote>
+                    <p>{{ child_comment.content }}</p>
+                    <footer style="color: lightseagreen;">By: {{ child_comment.user }} | {{ child_comment.timestamp|timesince }} ago</footer>
+                </blockquote>
+            {% endfor %}
+            <hr style="height:1px; border:none; color:lightblue; background-color:lightblue;">
+            {% if request.user.is_authenticated %}
+                <form method="post" action="." style="text-align: center;">
+                    {% csrf_token %}
+                    {{form}}
+                    <input type="hidden" name="parent_id" value="{{ comment.id }}">
+                    <input type="submit" value="Reply" class="btn btn-default">
+                </form>
+            {% else %}
+                <p>You Must Login To Reply</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "A3rafkolytk/header.html" %}
+
+{% block title %}Technical Teams{% endblock %}
+
+{% block content %}
+<p  style="margin-top: 80px; text-align: center; font-family: 'Josefin Sans', sans-serif; color: white; font-size: 100px">Technical Teams</p>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 50px;margin-bottom: 0px; margin-left: 300px; margin-right: 300px;">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="1" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="2" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="3" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="4" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="5" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="6" style="background-color: black; border-color: white;"></li>
+    <li data-target="#myCarousel" data-slide-to="7" style="background-color: black; border-color: white;"></li>
+  </ol>
+
+    {% load staticfiles %}
+  <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+            <a href="#Torpedo team"><img src="{% static 'techncial/img/11.jpg' %}" alt="torpedo" style="width:100%; height: 300px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#Made In Alex (M.I.A)"><img src="{% static 'techncial/img/2.png' %}" alt="MIA" style="width:100%; height: 300px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#AUMotorsports"><img src="{% static 'techncial/img/33.jpg' %}" alt="AUM" style="width:100%; height: 300px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#Robo-Tech Team"><img src="{% static 'techncial/img/44.jpg' %}" alt="Robo-Tech Team" style="width:100%; height: 300px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#VorteX CO"><img src="{% static 'techncial/img/55.png' %}" alt="VorteX CO" style="width:100%; height: 300px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#Mind Cloud"><img src="{% static 'techncial/img/66.jpg' %}" alt="Mind Cloud" style="width:100%; height: 300px;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#CrocoMarine ROV Team"><img src="{% static 'techncial/img/77.jpg' %}" alt="CrocoMarine ROV Team" style="width:100%; height: 300px;"></a>
+      </div>
+      <div class="item">
+        <a href="#Pegasus Team: Alexandria Uni."><img src="{% static 'techncial/img/88.png' %}" alt="Pegasus Team: Alexandria Uni." style="width:100%; height: 300px;"></a>
+      </div>
+
+    </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+
+{% for com in object_list %}
+<div style="margin: 75px 150px; background-color: cadetblue; padding-bottom: 100px; padding-left: 100px; padding-right: 100px; padding-top: 60px; border-radius: 25px;" id="{{ com.technical_name }}" class="wow jackInTheBox" data-wow-duration="2s" data-wow-delay=".1s">
+    <h2 style="font-family: 'Josefin Sans', sans-serif; text-align: center; color: darkred;">{{ com.technical_name }}</h2>
+    <p style="text-align: center; font-family: 'Josefin Sans', sans-serif; color: brown; font-size: 19px"><b>
+        {{ com.technical_description }}
+      <a href="{{com.technical_link1}}" target="_blank"><img  src="{% static 'teams/img/fb.png' %}" alt="fblink" height="70" width="70" align="right"></a>
+
+        </b>
+    </p>
+</div>
+
+
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "A3rafkolytk/header.html" %}
+{% block title%}Post{% endblock %}
+{% block content %}
+
+<div style="align-content: center; background-color: beige; margin: 10% 10%; border-radius: 25px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+        <h1>Post Maker</h1>
+        </div>
+        <div class="panel-body">
+            {% if request.user.is_authenticated %}
+                <form method="post" action="" enctype="multipart/form-data">{% csrf_token %}
+
+                    {{ form.as_p }}
+                    <input type="submit" value="Post">
+
+                </form>
+            {% else %}
+                <p>You Have To Login First</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+    
+{% endblock %}

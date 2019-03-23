@@ -1,0 +1,56 @@
+{% extends "A3rafkolytk/header.html" %}
+
+{% block title%}Community{% endblock %}
+
+{% block content %}
+    
+    <div style="align-content: center; background-color: beige; margin: 10% 10%; border-radius: 25px;">
+        <div style="padding-top: 2.5%; text-align: center;">
+            <h2>Here we comunicate with each other to make a strong bond between us ^__^</h2>
+        </div>
+        <div class="col-sm-offset-5">
+            <a href="{% url 'posts:post_create' %}" style="font-size: 200%;">Create New Post</a>
+        </div>
+        <hr style="height:1px; border:none; color:cadetblue; background-color:cadetblue;">
+        <div class="col-sm-offset-3" style="margin-right: 20%;">
+        {% for obj in object_list %}
+            <div class="panel panel-info">
+                <div class="panel-heading"><a href='{{ obj.get_absolute_url }}' style="font-size: 150%;">{{ obj.title }}</a><br></div>
+                <div class="panel-body">
+                    {% if obj.image %}
+                        <img src="{{ obj.image.url }}" class="img-responsive">
+                    {% endif %}
+                    <p style="font-size: 150%; color: darkslategray;">{{obj.content}}</p>
+                    <footer style="color: lightseagreen;">
+                        posted by: {{obj.user}} | {{obj.timestamp|timesince}} ago
+                        {% if not obj.timestamp == obj.updated%}
+                        <br>
+                        updated: {{obj.updated|timesince}} ago
+                        {% endif %}
+                    </footer>
+                    {% if request.user == obj.user %}
+                        <a href="{% url 'posts:post_update' obj.id %}">Update</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        <br>
+        <div class="pagination">
+            <span class="step-links">
+                <span class="current">
+                    Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+                </span>
+                {% if object_list.has_previous %}
+                    <a href="?page=1">&laquo; first</a> | <a href="?page={{ object_list.previous_page_number }}">previous</a>
+                    {% if object_list.has_next %} | {% endif %}
+                {% endif %}
+                
+                {% if object_list.has_next %}
+                    <a href="?page={{ object_list.next_page_number }}">next</a> | <a href="?page={{ object_list.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+    
+{% endblock %}

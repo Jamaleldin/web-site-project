@@ -1,0 +1,58 @@
+{% extends "A3rafkolytk/header.html" %}
+{% block title%}Post Detail{% endblock %}
+{% block content %}
+<div style="align-content: center; background-color: beige; margin: 10% 10%; border-radius: 25px;">
+    <div class="panel panel-info">
+        <div class="panel-heading"><h1 style="text-align: center;">{{ title }}</h1></div>
+        <div class="panel-body">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4>
+                    Posted by: {{ instance.user }}<br>
+                    since:{{ instance.timestamp|timesince }}
+                    {% if not instance.timestamp == instance.updated %}
+                    <br>Updated since:{{ instance.updated|timesince }}
+                    {% endif %}
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    <p>{{ instance.content }}</p>
+                    {% if instance.image %}
+                        <div style="height: 50%; width: 50%" class="col-sm-offset-3">
+                            <a href="{{ instance.image.url }}">
+                                <img src="{{ instance.image.url }}" class="img-responsive">
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>    
+    
+    <div class="panel panel-info">
+        <div class="panel-heading"><h4>Comments</h4></div>
+        <div class="panel-body">
+            {% if request.user.is_authenticated %}
+            <div style="text-align: center;">
+                <form method="post" action=".">{% csrf_token %}
+                    {{comment_form}}
+                    <input type="submit" value="Post Comment" class="btn btn-default">
+                </form>
+            </div>
+            {% else %}
+                <p>You Must Login To Comment</p>
+            {% endif %}
+            <hr style="height:1px; border:none; color:cadetblue; background-color:cadetblue;">
+            <div>
+                {% for comment in comments %}
+                    <blockquote>
+                        <p>{{ comment.content }}</p>
+                        <p style="color: lightseagreen">By: {{ comment.user }} | {{ comment.timestamp|timesince }} ago | {% if comment.children.count > 1 %} {{ comment.children.count }} Replies | {% elif comment.children.count == 1 %}1 Reply | {% endif %}<a href="{{ comment.get_absolute_url }}">Reply</a></p>
+                    </blockquote>
+                    <hr style="height:1px; border:none; color:lightblue; background-color:lightblue;">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

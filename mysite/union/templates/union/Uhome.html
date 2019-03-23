@@ -1,0 +1,98 @@
+{% extends "A3rafkolytk/header.html" %}
+
+{% block title %}Student's Union{% endblock %}
+
+{% block content %}
+
+
+<div style="margin: 75px 75px; background-color: cadetblue; padding-bottom: 10px; padding-left: 100px;padding-right: 100px; padding-top: 10px; border-radius: 25px;" class="wow jackInTheBox" data-wow-duration="2s" data-wow-delay=".1s">
+    <h1 style="font-family: 'Josefin Sans', sans-serif; text-align: center; color: darkred;">Who are Student's Union</h1>
+    <p style="text-align: center; font-family: 'Josefin Sans', sans-serif; color: brown; font-size: 19px"><b>
+
+        Alexandria Engineering Students Union is a group of students whose aim is to help students in the college<br>
+        and provide services to them and is a representative of them<br>
+        The student union consists of 70 students and 7 committees.<br>
+        Each committee has 10 members, including the secretary and assistant secretary of the committee and<br>
+        the council of the union Consisting of the President of the Union and his deputy,<br>
+        and the secretaries and secretaries of assistants<br>
+    </b></p>
+</div>
+<div style="margin: 75px 75px; background-color: cadetblue; padding-bottom: 100px; padding-left: 100px;padding-right: 100px; padding-top: 10px; border-radius: 25px;" class="wow jackInTheBox" data-wow-duration="2s" data-wow-delay=".1s">
+    <h1 style="font-family: 'Josefin Sans', sans-serif; text-align: center; color: darkred;">Student's Union Committees</h1>
+    <p style="text-align: center; font-family: 'Josefin Sans', sans-serif; color: brown; font-size: 19px"><b>
+Alexandria Engineering Students Union is composed of 7 committees of each committee dealing with aspects <br>
+        of life... to know the job description of each committee scroll down
+
+        </b>
+    </p>
+</div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-left: 200px; margin-right: 260px;">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active" style="background-color: forestgreen; border-color: forestgreen;"></li>
+    <li data-target="#myCarousel" data-slide-to="1" style="background-color: forestgreen; border-color: forestgreen;"></li>
+    <li data-target="#myCarousel" data-slide-to="2" style="background-color: forestgreen; border-color: forestgreen;"></li>
+    <li data-target="#myCarousel" data-slide-to="3" style="background-color: forestgreen; border-color: forestgreen;"></li>
+    <li data-target="#myCarousel" data-slide-to="4" style="background-color: forestgreen; border-color: forestgreen;"></li>
+    <li data-target="#myCarousel" data-slide-to="5" style="background-color: forestgreen; border-color: forestgreen;"></li>
+    <li data-target="#myCarousel" data-slide-to="6" style="background-color: forestgreen; border-color: forestgreen;"></li>
+  </ol>
+
+    {% load staticfiles %}
+  <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <a href="#Social  Committee"><img src="{% static 'union/img/UnionSo.jpg' %}" alt="Social Committee" style="width:100%;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#Teams Committee"><img src="{% static 'union/img/12.jpg' %}" alt="Teams Committee" style="width:100%;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#Sports Committee"><img src="{% static 'union/img/13.jpg' %}" alt="Sports Committee" style="width:100%;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#Cultural Committe"><img src="{% static 'union/img/14.jpg' %}" alt="Cultural Committee" style="width:100%;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#Scientific Committee"><img src="{% static 'union/img/15.jpg' %}" alt="Scientific Committee" style="width:100%;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#Scouts Committee"><img src="{% static 'union/img/18.jpg' %}" alt="Scouts Committee" style="width:100%;"></a>
+      </div>
+
+      <div class="item">
+        <a href="#Arts Committee"><img src="{% static 'union/img/16.jpg' %}" alt="Arts Committee" style="width:100%;"></a>
+      </div>
+    </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+{% for com in object_list %}
+<div style="margin: 75px 75px; background-color: cadetblue; padding-bottom: 100px; padding-left: 100px;padding-right: 100px; padding-top: 60px; border-radius: 25px;" id="{{ com.committee_name }}" class="wow jackInTheBox" data-wow-duration="2s" data-wow-delay=".1s">
+    <h2 style="font-family: 'Josefin Sans', sans-serif; text-align: center; color: darkred;">{{ com.committee_name }}</h2>
+    <p style="text-align: center; font-family: 'Josefin Sans', sans-serif; color: brown; font-size: 19px"><b>
+        {{ com.committee_description }}
+        </b>
+    </p>
+</div>
+{% endfor %}
+<div>
+<a href="https://www.facebook.com/alexeng.student.union/" target="_blank"><img src="{% static 'union/img/fb.png' %}" alt="Social Committee" height="70" width="70" align="right"></a>
+</div>
+
+
+{% endblock %}
